@@ -17,7 +17,7 @@ public class AppController {
 	@GetMapping("/")
 	public String showCourse(Model model) {
 		Course c = courseservice.findCourse(7900);
-		return "exercise";
+		return "course";
 	}
 
 }
