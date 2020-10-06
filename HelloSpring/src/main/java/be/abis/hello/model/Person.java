@@ -3,10 +3,11 @@ package be.abis.hello.model;
 public class Person {
 	
 	private String firstName;
-	
+
 	public Person() {}
 	
 	public Person(String firstName) {
+		super();
 		this.firstName = firstName;
 	}
 
@@ -17,6 +18,7 @@ public class Person {
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
+	
 	
 
 }
