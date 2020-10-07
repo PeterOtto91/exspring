@@ -26,6 +26,8 @@ public class AppController {
 	@Autowired
 	PersonService personservice;
 	
+	Person p;
+	
 	@GetMapping("/")
 	public String loginForm(Model model){
 		Login loggedInPerson  = new Login(); 
@@ -33,10 +35,24 @@ public class AppController {
 		return "login";
 	}
 	
-	@PostMapping("/login")
+	@PostMapping("/")
 	public String welcome(Model model, Login login) {
-		Person p = personservice.findPerson(login.getEmailAddress(), login.getPassword());
-	    return "redirect :/welcome";
+		this.p = personservice.findPerson(login.getEmailAddress(), login.getPassword());
+	    return "redirect:/welcome";
+	}
+	
+	
+	@GetMapping("/welcome")
+	public String welcomeForm(Model model){
+		model.addAttribute("firstname", this.p.getFirstName());
+		return "welcome";
+	}
+
+	
+	@PostMapping("/welcome")
+	public String login(Model model) {
+		
+	    return "redirect:/";
 	}
 	
 	

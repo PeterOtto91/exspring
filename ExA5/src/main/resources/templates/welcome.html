@@ -6,7 +6,7 @@
 </head>
 <body>
 
-<h1> Welcome <span></span></h1><br>
+<h1> Welcome <span th:text="${firstname}"></span></h1><br>
 <br>
 <a href="searchcourse.html">Search for Courses</a><br>
 <br>
@@ -15,7 +15,7 @@
 <br>
 <br>
 <br>
-<form action="login.html">
+<form action="#" method="post" th:action="@{/}" th:object="${login}">
     <button type="submit">Logout</button>
 </form>
 
