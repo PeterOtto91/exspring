@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import be.abis.exercise.model.Course;
+import be.abis.exercise.model.Login;
 import be.abis.exercise.model.Person;
 import be.abis.exercise.service.CourseService;
 import be.abis.exercise.service.PersonService;
@@ -27,13 +28,14 @@ public class AppController {
 	
 	@GetMapping("/")
 	public String loginForm(Model model){
-		model.addAttribute("login", 1);
+		Login loggedInPerson  = new Login(); 
+		model.addAttribute("login", loggedInPerson);
 		return "login";
 	}
 	
 	@PostMapping("/login")
-	public String welcome(Model model, Person login) {
-	    loggedInPerson = personservice.findPerson(emailAddress, password);
+	public String welcome(Model model, Login login) {
+		Person p = personservice.findPerson(login.getEmailAddress(), login.getPassword());
 	    return "redirect :/welcome";
 	}
 	

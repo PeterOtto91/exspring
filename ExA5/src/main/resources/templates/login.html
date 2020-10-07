@@ -8,7 +8,7 @@
 
 <h1>Please login </h1><br>
 
-<form action="#" method="post" th:action="@/login">
+<form action="#" method="post" th:action="@{/}" th:object="${login}">
 <label for="email">email: </label>
 <input type="text" th:field="*{emailAddress}" id="email" name="email"><br>
 <br>
