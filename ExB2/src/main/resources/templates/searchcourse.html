@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Course</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h1> Search for courses</h1>
+
+
+<form action="#" method="post" th:object="${courseOption}" th:action="@{/searchCourse}">
+  <label for="course">Choose action:</label>
+  <select th:field="*{selectedItem}" name="course" id="course">
+    <option value="all">Show all courses</option>
+    <option value="byid">Find course by id</option>
+    <option value="bystitle">Find course by short title</option>
+  </select>
+  <br><br>
+  <span>Search for: </span><span><input type="text" th:field="*{selectedArgument}" id="courseselect" name="courseselect"></span>
+  <br><br>
+  <input type="submit" value="Submit">
+</form>
+
+
+<br>
+<br>
+
+<table style="width:100%">
+  <tr>
+    <th>Id</th>
+    <th>Long Title</th>
+    <th>Number of Days</th>
+    <th>Price per Day</th>
+    <th>Short Title</th>
+  </tr>
+ 
+  <tr th:each="course : ${courses}">
+    <td th:text="${course.courseId}"></td>
+    <td th:text="${course.longTitle}"></td>
+    <td th:text="${course.numberOfDays}"></td>
+    <td th:text="${course.pricePerDay}"></td>
+    <td th:text="${course.shortTitle}"></td>
+  </tr>
+</table>
+
+<br>
+<br>
+<br>
+<br>
+<form action="#" method="get" th:action="@{/welcome}">
+    <button type="submit">Back</button>
+</form>
+
+</body>
+</html>

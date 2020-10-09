@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Perosn Administration</title>
+</head>
+<body>
+
+<h1> Person Administration</h1><br>
+<br>
+<form action="#" method="get" th:action="@{/doPw}">
+    <button type="submit">Change Password</button>
+</form>
+
+<br>
+<form action="#" method="get" th:action="@{/doShowPersons}">
+    <button type="submit">Show Persons</button>
+</form>
+<br>
+<form action="#" method="get" th:action="@{/doAddP}">
+    <button type="submit">Add Person</button>
+</form>
+<br>
+<form action="#" method="get" th:action="@{/doRemoveP}">
+    <button type="submit">Remove Person</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="#" method="get" th:action="@{/welcome}">
+    <button type="submit">Back</button>
+</form>
+
+</body>
+</html>

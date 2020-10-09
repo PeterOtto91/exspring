@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Change Password</title>
+</head>
+<body>
+
+<h1>Change Password </h1><br>
+
+<form action="#" method="post" th:action="@{/changePw}" th:object="${password1}">
+<label for="newpassword">New Password: </label>
+<input type="password" th:field="*{newPassword}" id="newpassword" name="newpassword"><br>
+<br>
+<br>
+<input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
