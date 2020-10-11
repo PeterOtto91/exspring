@@ -17,7 +17,7 @@ public class Password {
 		return newPassword;
 	}
 
-	public void setNewPassword(String password) {
+	public void setNewPassword(String newPassword) {
 		this.newPassword = newPassword;
 	}
 	

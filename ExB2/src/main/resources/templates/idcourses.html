@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Course by Id</title>
+
+</head>
+<body>
+<h1>Find Course by Id</h1>
+<br>
+<form action="#" method="post" th:object="${courseId1}" th:action="@{/idCourses}">
+	<label for="courseid">Title: </label>
+	<input type="text" th:field="*{courseIdIn}" id="courseid" name="courseid">
+    <button type="submit">Find a Course by Id</button>
+</form>
+
+<br>
+<br>
+<br>
+<form action="#" method="post" th:action="@{/doCourses}">
+    <button type="submit">Back</button>
+</form>
+
+</body>
+</html>
