@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
+import be.abis.exercise.model.Address;
 import be.abis.exercise.model.Company;
 import be.abis.exercise.model.Course;
 import be.abis.exercise.model.CourseId;
@@ -197,6 +198,15 @@ public class AppController {
 	public String addPerson(Model model, Person personNew) throws IOException {
 		System.out.println("addPerson post bereikt");
 		c1 = personNew.getCompany();
+		Address ad1 = new Address();
+		ad1.setStreet("Een Straat");
+		ad1.setNr(15);
+		ad1.setZipcode("2800");
+		ad1.setTown("Mechelen");
+		c1.setAddress(ad1);
+		c1.setTelephoneNumber("475951636");
+		c1.setVatNr("Be476258");
+		personNew.setCompany(c1);
 		System.out.println("company name: " + c1.getName());
 		this.personRepository.addPerson(personNew);
 	    return "personadmin";

@@ -20,8 +20,17 @@
 <label for="fname">First Name: </label>
 <input type="text" th:field="*{firstName}" id="fname" name="fname"><br>
 <br>
+<label for="language">Language:</label>
+<select name="language" th:field="*{language}" id="language">
+  <option value="nl">Dutch</option>
+  <option value="fr">French</option>
+  <option value="en">English</option>
+</select>
+<!-- 
 <label for="language">Language: </label>
 <input type="text" th:field="*{language}" id="language" name="language"><br>
+-->
+<br>
 <br>
 <label for="lname">Last Name: </label>
 <input type="text" th:field="*{lastName}" id="lname" name="lname"><br>
