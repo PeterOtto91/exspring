@@ -2,6 +2,7 @@ package be.abis.exercise.model;
 
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 public class Person {
@@ -13,9 +14,10 @@ public class Person {
 	private int age;
 	@Email( message="Please enter a valid Email Address")
 	private String emailAddress;
-	@Size(min=6, message="Password should be at least 6 long")
+	@Size(min = 6, max = 15, message="Password should be at least 6 long")
 	private String password;
 	private String language;
+	@NotNull( message="Please enter the Company Name")
 	private Company company;
 	
 	

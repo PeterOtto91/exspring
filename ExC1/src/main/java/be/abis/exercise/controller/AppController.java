@@ -59,7 +59,7 @@ public class AppController {
 	Course course1;
 	CourseId courseId2 = new CourseId();
 	CourseTitle courseTitle2 = new CourseTitle();
-	Company c1;
+	
 	
 	
 	//login
@@ -71,10 +71,13 @@ public class AppController {
 	}
 	
 	@PostMapping("/")
-	public String welcome(Model model, Login login) {
+	public String welcome(Model model, @Valid @ModelAttribute("login") Login login) {
+		
 		this.p = personservice.findPerson(login.getEmailAddress(), login.getPassword());
 		this.eMail = login.getEmailAddress();
+		
 	    return "redirect:/welcome";
+	    
 	}
 	//end
 	
@@ -198,7 +201,15 @@ public class AppController {
 		return "addperson";
 	}
 	@PostMapping("/addPerson")
-	public String addPerson(Model model, @Valid Person personNew, BindingResult bindingResult) throws IOException {
+	public String addPerson(Model model, @Valid @ModelAttribute("personNew") Person personNew, BindingResult bindingResult) throws IOException {
+		
+		@Valid
+		Company c1;
+		
+		if (bindingResult.hasErrors()){
+			return "addperson";
+		}
+		
 		System.out.println("addPerson post bereikt");
 		c1 = personNew.getCompany();
 		Address ad1 = new Address();
@@ -213,11 +224,8 @@ public class AppController {
 		System.out.println("company name: " + c1.getName());
 		this.personRepository.addPerson(personNew);
 		
-		if (bindingResult.hasErrors()){
-			return "addperson";
-		}else {
-			return "personadmin";
-		}
+		return "personadmin";
+	
 	}
 	
 	
