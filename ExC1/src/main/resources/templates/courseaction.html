@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>course Administration</title>
+</head>
+<body>
+
+<h1> Course Administration</h1><br>
+<br>
+<form action="#" method="get" th:action="@{/allCourses}">
+    <button type="submit">Show all Courses</button>
+</form>
+
+<br>
+<form action="#" method="get" th:action="@{/idCourses}">
+    <button type="submit">Find a Course by Id</button>
+</form>
+<br>
+
+<form action="#" method="get" th:action="@{/titleCourses}">
+    <button type="submit">Find a Course by Short Title</button>
+</form>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<form action="#" method="get" th:action="@{/welcome}">
+    <button type="submit">Back</button>
+</form>
+
+</body>
+</html>

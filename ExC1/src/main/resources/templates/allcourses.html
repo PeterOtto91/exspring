@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Show all Courses</title>
+<style>
+table, th, td {
+  border: 1px solid black;
+}
+</style>
+</head>
+<body>
+
+<h1>List of Available Courses</h1>
+
+<table style="width:100%">
+  <tr>
+    <th>Id</th>
+    <th>Long Title</th>
+    <th>Number of Days</th>
+    <th>Price per Day</th>
+    <th>Short Title</th>
+  </tr>
+ 
+  <tr th:each="course : ${courses}">
+    <td th:text="${course.courseId}"></td>
+    <td th:text="${course.longTitle}"></td>
+    <td th:text="${course.numberOfDays}"></td>
+    <td th:text="${course.pricePerDay}"></td>
+    <td th:text="${course.shortTitle}"></td>
+  </tr>
+</table>
+<br>
+<br>
+<br>
+<form action="#" method="post" th:action="@{/doCourses}">
+    <button type="submit">Back</button>
+</form>
+
+</body>
+</html>

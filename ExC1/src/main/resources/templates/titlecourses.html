@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+
+</head>
+<body>
+<h1>Find Course by Title</h1>
+<br>
+<form action="#" method="post" th:object="${courseTitle1}" th:action="@{/titleCourses}">
+	<label for="coursetitle">Title: </label>
+	<input type="text" th:field="*{courseTitleIn}" id="coursetitle" name="coursetitle">
+    <button type="submit">Find a Course by Short Title</button>
+</form>
+
+<br>
+<br>
+<br>
+<form action="#" method="post" th:action="@{/doCourses}">
+    <button type="submit">Back</button>
+</form>
+</body>
+</html>

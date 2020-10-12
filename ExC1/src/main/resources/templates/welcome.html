@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Welcome</title>
+</head>
+<body>
+
+<h1> Welcome <span th:text="${firstname}"></span></h1><br>
+<br>
+<form action="#" method="post" th:action="@{/doCourses}">
+    <button type="submit">Search for Courses</button>
+</form>
+
+<br>
+<form action="#" method="post" th:action="@{/doAdmin}">
+    <button type="submit">Person Administration</button>
+</form>
+<br>
+<br>
+<br>
+<br>
+<form action="#" method="get" th:action="@{/}">
+    <button type="submit">Logout</button>
+</form>
+
+</body>
+</html>
